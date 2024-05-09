@@ -63,8 +63,8 @@ def start():
             c = ET.SubElement(p, 'path')
             c.text = path + name + '.png'
             c = ET.SubElement(p, 'sourse')
-            # c = ET.SubElement(c, 'database')
-            c.text = 'hm'
+            c = ET.SubElement(c, 'database')
+            c.text = 'Unknown'
             c = ET.SubElement(p, 'size')
             s = ET.SubElement(c, 'width')
             s.text = '46'
