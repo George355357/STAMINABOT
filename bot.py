@@ -27,7 +27,7 @@ namespace = {
     94: '4', 95: '5', 96: '6', 97: '7', 98: '8', 99: '9', 100: '0',
 }
 
-classifier_all = tf.keras.models.load_model('classifier.h5')
+classifier = tf.keras.models.load_model('classifier.h5')
 if gpu:
     gpus = tf.config.experimental.list_physical_devices('GPU')
     for gpu in gpus:
