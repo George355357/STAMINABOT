@@ -1,6 +1,5 @@
 import mss
 import keyboard as kd
-import tkinter as tk
 from tkinter import messagebox
 import numpy as np
 import os
