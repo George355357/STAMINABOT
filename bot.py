@@ -9,6 +9,7 @@ import tensorflow as tf
 kd.add_hotkey('insert', lambda: start_ins())
 reg = 1720, 678, 1766, 750
 flag = False
+
 gpu = False
 
 namespace = {
@@ -22,7 +23,7 @@ namespace = {
     61: 'И', 62: 'Т', 63: 'Ь', 64: 'Б', 65: 'Ю', 66: 'Ё',
     67: '.', 68: ',', 69: '!', 70: '@', 71: '#', 72: '$', 73: '%', 74: '^',
     75: '&', 76: '*', 77: '(', 78: ')', 79: '-', 80: '=', 81: '+',
-    82: '/', 83: '|', 84: '\', 85: ':',
+    82: '\\', 83: '|', 84: '/', 85: ':',
     86: ';', 87: "'", 88: '"', 89: '№', 90: '?', 91: '1', 92: '2', 93: '3',
     94: '4', 95: '5', 96: '6', 97: '7', 98: '8', 99: '9', 100: '0',
 }
@@ -50,7 +51,7 @@ def start():
         image_exp = tf.expand_dims(small_image, axis=0)
 
         # классифицируем
-        predictions = classifier_all(image_exp)
+        predictions = classifier (image_exp)
         max_probability = np.max(predictions, axis=-1)
         predicted_class = np.argmax(predictions, axis=-1)
         predicted_class_scalar = predicted_class[0] if isinstance(predicted_class, np.ndarray) else predicted_class
@@ -97,6 +98,7 @@ lab.pack()
 
 main.attributes('-topmost', True)
 main.geometry('+200+200')
-main.mainloop()
+if __name__ == '__main__':
+    main.mainloop()
 
 # endregion
