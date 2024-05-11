@@ -52,12 +52,14 @@ def start():
 
         # классифицируем
         predictions = classifier (image_exp)
-        max_probability = np.max(predictions, axis=-1)
         predicted_class = np.argmax(predictions, axis=-1)
-        predicted_class_scalar = predicted_class[0] if isinstance(predicted_class, np.ndarray) else predicted_class
-        print(f'Класс с самой высокой вероятностью: {predicted_class_scalar} -- {namespace[int(predicted_class_scalar)]}')
-        print(f'Максимальная вероятность: {max_probability}\n')
-        key = namespace[int(predicted_class_scalar)]
+        
+        # max_probability = np.max(predictions, axis=-1)
+        # predicted_class_scalar = predicted_class[0] if isinstance(predicted_class, np.ndarray) else predicted_class
+        # print(f'Класс с самой высокой вероятностью: {predicted_class_scalar} -- {namespace[int(predicted_class_scalar)]}')
+        # print(f'Максимальная вероятность: {max_probability}\n')
+        
+        key = namespace[int(predicted_class)]
         kd.write(key)
 
     print('Done')
