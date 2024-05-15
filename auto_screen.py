@@ -47,8 +47,9 @@ namespace_write = {
 def start():
     st = tm.time()
     sct = mss.mss()
-    png_files = [file for file in os.listdir(path) if file.endswith('.png')]
-    cnt = len(png_files)
+    # png_files = [file for file in os.listdir(path) if file.endswith('.png')]
+    # cnt = len(png_files)
+    cnt = 0
     for class_name in range(1, 101):
         for _ in range(5):
             cnt += 1
